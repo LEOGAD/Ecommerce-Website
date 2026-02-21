@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Luxe | Login & Registration</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 flex items-center justify-center min-h-screen">
+    <div
+        class="max-w-md w-full p-8 bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-800">
+        <div class="text-center mb-8">
+            <div class="inline-flex items-center justify-center p-3 bg-primary/10 rounded-2xl text-primary mb-4">
+                <span class="material-symbols-outlined text-3xl">diamond</span>
+            </div>
+            <h1 class="text-3xl font-bold">Welcome to LUXE</h1>
+            <p class="text-slate-500 mt-2">Create an account or login to continue</p>
+        </div>
+
+        <div class="flex gap-4 mb-6 border-b border-slate-200 dark:border-slate-800 pb-4">
+            <button id="tab-login"
+                class="flex-1 text-center font-bold text-primary border-b-2 border-primary pb-2 transition-all">Login</button>
+            <button id="tab-register"
+                class="flex-1 text-center font-bold text-slate-500 hover:text-slate-800 dark:hover:text-slate-300 border-b-2 border-transparent pb-2 transition-all">Register</button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="login-form" class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium mb-1">Email Address</label>
+                <input type="email" name="email" required
+                    class="w-full px-4 py-3 rounded-xl border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:ring-2 focus:ring-primary outline-none transition-all"
+                    placeholder="name@example.com">
+            </div>
+            <div>
+                <label class="block text-sm font-medium mb-1">Password</label>
+                <input type="password" name="password" required
+                    class="w-full px-4 py-3 rounded-xl border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:ring-2 focus:ring-primary outline-none transition-all"
+                    placeholder="••••••••">
+            </div>
+            <button type="submit"
+                class="w-full py-4 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl shadow-lg shadow-primary/20 transition-all">
+                Login
+            </button>
+        </form>
+
+        <!-- Register Form -->
+        <form id="register-form" class="space-y-4 hidden">
+            <div>
+                <label class="block text-sm font-medium mb-1">Full Name</label>
+                <input type="text" name="name" required
+                    class="w-full px-4 py-3 rounded-xl border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:ring-2 focus:ring-primary outline-none transition-all"
+                    placeholder="John Doe">
+            </div>
+            <div>
+                <label class="block text-sm font-medium mb-1">Email Address</label>
+                <input type="email" name="email" required
+                    class="w-full px-4 py-3 rounded-xl border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:ring-2 focus:ring-primary outline-none transition-all"
+                    placeholder="name@example.com">
+            </div>
+            <div>
+                <label class="block text-sm font-medium mb-1">Phone Number</label>
+                <input type="tel" name="phone" required
+                    class="w-full px-4 py-3 rounded-xl border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:ring-2 focus:ring-primary outline-none transition-all"
+                    placeholder="+1 (555) 000-0000">
+            </div>
+            <div>
+                <label class="block text-sm font-medium mb-1">Password</label>
+                <input type="password" name="password" required
+                    class="w-full px-4 py-3 rounded-xl border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:ring-2 focus:ring-primary outline-none transition-all"
+                    placeholder="••••••••">
+            </div>
+            <button type="submit"
+                class="w-full py-4 bg-slate-900 dark:bg-white dark:text-slate-900 hover:opacity-90 text-white font-bold rounded-xl shadow-lg transition-all">
+                Create Account
+            </button>
+        </form>
+
+        <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 text-center">
+            <a href="index.html"
+                class="text-sm font-medium text-slate-500 hover:text-primary transition-colors flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-sm">arrow_back</span>
+                Back to Store
+            </a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
