@@ -65,13 +65,20 @@
     <nav class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 glass-nav">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <div class="flex items-center gap-2 group cursor-pointer">
-                    <div class="bg-primary p-1.5 rounded-lg text-white">
-                        <span class="material-symbols-outlined block text-2xl">diamond</span>
-                    </div>
-                    <span
-                        class="text-2xl font-black tracking-tighter text-slate-900 dark:text-white uppercase">Luxe</span>
+                <div class="flex items-center gap-4">
+                    <!-- Mobile Menu Button -->
+                    <button
+                        class="mobile-menu-btn md:hidden p-2 -ml-2 text-slate-600 dark:text-slate-300 hover:text-primary transition-colors cursor-pointer z-50">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                    <!-- Logo -->
+                    <a href="index.html" class="flex items-center gap-2 group cursor-pointer">
+                        <div class="bg-primary p-1.5 rounded-lg text-white">
+                            <span class="material-symbols-outlined block text-2xl">diamond</span>
+                        </div>
+                        <span
+                            class="text-2xl font-black tracking-tighter text-slate-900 dark:text-white uppercase hidden sm:block">Luxe</span>
+                    </a>
                 </div>
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center gap-8">
@@ -126,6 +133,22 @@
                         </button>
                     </div>
                 </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Overlay -->
+        <div
+            class="mobile-menu hidden absolute top-full left-0 w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-xl z-40">
+            <div class="p-4 flex flex-col gap-4">
+                <a class="text-base font-semibold hover:text-primary transition-colors" href="products.html">Shop All
+                    Categories</a>
+                <a class="text-base font-semibold hover:text-primary transition-colors"
+                    href="products.html?category=apparel">Apparel</a>
+                <a class="text-base font-semibold hover:text-primary transition-colors"
+                    href="products.html?category=accessories">Accessories</a>
+                <a class="text-base font-semibold hover:text-primary transition-colors"
+                    href="products.html?category=home">Home Decor</a>
+                <a class="text-base font-semibold hover:text-primary transition-colors" href="new-arrivals.html">New
+                    Arrivals</a>
             </div>
         </div>
     </nav>

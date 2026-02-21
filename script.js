@@ -20,7 +20,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     ensureProductLinks();
     trackAnalytics();
+    initMobileMenus();
 });
+
+// --- Mobile Menus ---
+function initMobileMenus() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu on outside click
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    }
+
+    const adminMenuBtn = document.getElementById('admin-menu-btn');
+    const adminSidebar = document.getElementById('admin-sidebar');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+    if (adminMenuBtn && adminSidebar && sidebarOverlay) {
+        const toggleAdminSidebar = () => {
+            adminSidebar.classList.toggle('-translate-x-full');
+            sidebarOverlay.classList.toggle('hidden');
+        };
+
+        adminMenuBtn.addEventListener('click', toggleAdminSidebar);
+        sidebarOverlay.addEventListener('click', toggleAdminSidebar);
+    }
+}
 
 // --- Store Data Initialization ---
 function initStoreData() {

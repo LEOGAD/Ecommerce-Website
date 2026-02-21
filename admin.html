@@ -45,9 +45,12 @@
 
 <body class="bg-slate-50 dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
     <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar Overlay -->
+        <div id="sidebar-overlay" class="fixed inset-0 bg-slate-900/50 z-40 hidden lg:hidden"></div>
         <!-- Sidebar -->
-        <aside class="w-64 glass-sidebar bg-slate-900 text-white flex flex-col border-r border-slate-800">
-            <div class="p-6">
+        <aside id="admin-sidebar"
+            class="fixed inset-y-0 left-0 z-50 w-64 -translate-x-full lg:translate-x-0 lg:static glass-sidebar bg-slate-900 text-white flex flex-col border-r border-slate-800 transition-transform duration-300">
+            <div class="p-6 flex justify-between items-center">
                 <a href="index.html" class="flex items-center gap-2 group">
                     <div class="bg-primary p-1.5 rounded-lg text-white">
                         <span class="material-symbols-outlined text-2xl">diamond</span>
@@ -173,8 +176,14 @@
         <main class="flex-1 flex flex-col bg-slate-50 dark:bg-background-dark overflow-hidden">
             <!-- Header -->
             <header
-                class="h-20 bg-white dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-8 backdrop-blur-md">
-                <h1 class="text-2xl font-bold">Dashboard</h1>
+                class="h-20 bg-white dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-4 sm:px-8 backdrop-blur-md shrink-0">
+                <div class="flex items-center gap-4">
+                    <button id="admin-menu-btn"
+                        class="lg:hidden p-2 -ml-2 text-slate-600 dark:text-slate-300 hover:text-primary transition-colors cursor-pointer">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                    <h1 class="text-2xl font-bold hidden sm:block">Dashboard</h1>
+                </div>
                 <div class="flex items-center gap-4">
                     <button class="p-2 text-slate-400 hover:text-primary transition-colors">
                         <span class="material-symbols-outlined">notifications</span>
